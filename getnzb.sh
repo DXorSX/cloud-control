@@ -67,7 +67,8 @@ if [ -r "$INICONTAINER" ]; then
 	scp ./"$INICONTAINER" root@"$IPv4":/root/cryptcontainer/
 fi
 
-ssh -l root "$IPv4" "apt --yes install git && \
+ssh -l root "$IPv4" "apt --yes update && \
+	apt --yes install git && \
 	cd /root && \
 	git clone https://github.com/DXorSX/cloud-control.git && \
 	cd /root/cloud-control/ && \
